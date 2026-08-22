@@ -23,6 +23,10 @@
 
 配置方式：WebUI 插件配置页，或 `data/config/astrbot_plugin_anchored_router_config.json` 中写 `{"tool_strategy": "minimal"}`（插件每请求重读该文件，改后无需重载）。
 
+## 研究报告
+
+完整实验、抓包与路由分析见：[deepseek-v4-pro-routing-research](https://github.com/sleep430/deepseek-v4-pro-routing-research)。
+
 ## 设计依据
 
 - dsh 的 DeepSeek V4 模型对 API 可见的工具目录强条件依赖：Minimal 条件产出 "We need…" 轨迹；首轮注入（AGENTS.md 摘要、技能目录）会破坏锚定（dsh-anchored-standard issue #6/#11）。
