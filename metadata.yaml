@@ -1,0 +1,15 @@
+name: astrbot_plugin_anchored_router
+desc: 复刻 dsh 内 DeepSeek 的正确路由机制，通过首轮轨迹锚定与极简工具面策略，引导模型延续高质量推理和工具调用路径，从而提升回复质量与任务执行能力。
+help: |-
+  使用 /anchor_here 绑定当前会话；/anchor_conv 绑定当前对话；/anchor_status 查看绑定状态；/anchor_off 解绑当前会话。
+  支持 reminder、register、minimal、minimal_lean、minimal_promote 等工具策略，详细说明见 README.md。
+version: "1.1.2a"
+author: 月咏小眠
+repo: https://github.com/sleep430/astrbot_plugin_anchored_router
+display_name: DeepSeek 正确路由工具
+short_desc: 复刻 dsh 的 DeepSeek 正确路由与轨迹锚定机制，提升模型推理和工具调用表现。
+astrbot_version: ">=4.5.7"
+tags:
+  - AI
+  - DeepSeek
+  - 工具
