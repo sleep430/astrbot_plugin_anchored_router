@@ -1,0 +1,15 @@
+{
+  "tool_strategy": {
+    "description": "工具策略。reminder：注入首轮虚拟对话，仅在注入轮向当前用户消息追加工具集变更提醒；register：额外把 dsh 极简版 bash 与 str_replace_editor（schema 逐字保真、真实可执行实现）注册进绑定会话的工具列表；minimal：在 register 基础上移除其他全部工具（含 send_message_to_user），使 tools 字段恰为 dsh 极简两件套，并清理点名其他工具的 system 段落。1.1.2 起新增（均不注入首轮虚拟对话，仅操作 system 字段与 tools 列表）：minimal_lean：永久保持仅 bash 与 str_replace_editor 两件套；minimal_promote：两件套起步，模型首次调用工具后的下一次请求起晋升全量工具并注入一次工具更新提醒，之后保持全工具状态。",
+    "type": "string",
+    "default": "minimal_lean",
+    "options": [
+      "reminder",
+      "register",
+      "minimal",
+      "minimal_lean",
+      "minimal_promote"
+    ],
+    "obvious_hint": true
+  }
+}

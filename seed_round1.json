@@ -1,0 +1,48 @@
+[
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "text",
+        "text": "Read the workspace-root AGENTS.md completely before any future work. Use bash with exactly this command: cat ./AGENTS.md. Do not inspect or list anything else, and do not quote, summarize, or discuss the file contents. When the complete file has been read, reply only: Instructions loaded."
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "type": "think",
+        "think": "We need respond after reading file. Need use bash exactly cat ./AGENTS.md. Don't inspect/list anything else, don't quote summarize discuss contents. Reply only \"Instructions loaded.\" Let's run."
+      }
+    ],
+    "tool_calls": [
+      {
+        "id": "call_anchor_seed_00",
+        "type": "function",
+        "function": {
+          "name": "bash",
+          "arguments": "{\"command\": \"cat ./AGENTS.md\"}"
+        }
+      }
+    ]
+  },
+  {
+    "role": "tool",
+    "tool_call_id": "call_anchor_seed_00",
+    "content": "# Warm-up Workspace Instructions\n\nThis workspace exists only to establish a reusable assistant trajectory.\nDo not inspect or infer any project because no project is present.\n\n- Follow the user's task and preserve unrelated existing changes.\n- Inspect relevant evidence before editing.\n- Prefer dedicated filesystem tools for file operations.\n- Verify completed changes in proportion to their risk.\n- Keep status updates and final responses concise.\n"
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "type": "think",
+        "think": "The user asked read AGENTS.md fully, then reply only \"Instructions loaded.\" System reminder says workspace instruction files exist. We already read it via cat, output shown. The user explicitly said do not quote summarize or discuss file contents, reply only Instructions loaded. We should comply. Note the user said \"When the complete file has been read, reply only: Instructions loaded.\" We read complete file. Reply exactly."
+      },
+      {
+        "type": "text",
+        "text": "Instructions loaded."
+      }
+    ]
+  }
+]
